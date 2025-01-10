@@ -5,9 +5,10 @@ import sqlite3
 import math
 from datetime import datetime
 import random
+import os
 
 # Bot settings
-TOKEN = "MTk3MDkzNTM5NTIyNDEyNTQ0.GbPR0c.RUIJ8D4bF3Om5s8-XKnumMY8D2Qxs_aT3LjqDs"
+
 DAILY_CHANNEL_ID = 1252692295518785661
 BIRTHDAY_CHANNEL_ID = 1263491036777549834
 PREFIX = '!'
@@ -320,6 +321,6 @@ async def check_and_announce_birthdays():
                     suffix = get_ordinal_suffix(age)
                     await channel.send(f"🎉 Happy {age}{suffix} Birthday to {user.mention}! 🎂")
 
-bot.run(TOKEN)
+bot.run(os.environ["DISCORD_TOKEN"])
 
 
